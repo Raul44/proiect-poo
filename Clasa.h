@@ -9,14 +9,16 @@
 #include "Elev.h"
 
 class Clasa {
-    std::vector <Elev> elevi;
+    std::vector <std::shared_ptr<Elev>> elevi;
 public:
-    Clasa(const std::vector<Elev> &elevi);
 
-   ~Clasa();
-   Clasa() = default;
-   void adauga_elev(const Elev &elev);
-   void adauga_elevi(const std::vector<Elev> &eli);
+    Clasa() = default;
+    ~Clasa();
+
+    void adauga_elev(const std::shared_ptr<Elev> &elev);
+    void adauga_elevi(const std::vector<std::shared_ptr<Elev>> &eli);
+
+    friend std::ostream &operator<<(std::ostream &os, const Clasa &clasa);
 };
 
 

@@ -13,17 +13,32 @@ Profesor::Profesor(const int &varsta, const std::string &nume, const std::string
                                                                                                   materie(materie),
                                                                                                   vechime(vechime) {}
 
-void Profesor::prezinta_ocupatia() {
-    if(this->get_gen() == "masculin")
-        std::cout<<"Profesorul ";
-    else
-        std::cout<<"Profesoara ";
-    std::cout<<this->nume<<" "<<this->prenume<<" preda "<<this->materie<<" si este de o vechime de "<<this->vechime<<" ani, are un salariu de "<<this->calculeaza_salariu()<<" de lei.";
+void Profesor::prezinta_ocupatia(std::ostream &os) const {
+        if(this->get_gen() == "masculin")
+            os<<"Profesorul ";
+        else
+        os<<"Profesoara ";
+    os<<this->nume<<" "<<this->prenume<<" preda "<<this->materie<<" si este de o vechime de "<<this->vechime<<" ani, are un salariu de "<<this->calculeaza_salariu()<<" de lei.";
 }
 
-int Profesor::calculeaza_salariu() {
+int Profesor::calculeaza_salariu() const {
     int salariu=2428 + 200 * vechime;
     if(diriginte)
         salariu += 300;
     return salariu;
+}
+
+std::shared_ptr<Profesor> Profesor::clone() const {
+    return std::make_shared<Profesor>(*this);
+}
+
+void Profesor::afis(std::ostream &os) const {
+    Persoana::afis(os);
+    os<<" Diriginte: "<< (diriginte? "Da " : "Nu ")<<" Materie: "<<materie<<" Vechime "<<vechime<<" ani ";
+}
+
+std::ostream &operator<<(std::ostream &os, const Profesor &profesor) {
+   // profesor.afis(os);
+   profesor.prezinta_ocupatia(os);
+    return os;
 }

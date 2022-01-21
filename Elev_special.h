@@ -21,10 +21,12 @@ class Elev_special: public Elev {
 
 public:
     Elev_special(const int &varsta, const std::string &nume, const std::string &prenume, const std::string &cnp,
-                 const Bursa &bursa, float medie, const std::string &locatieLocuinta,
+                  float medie, const std::string &locatieLocuinta,
                  Situatie_parentala situatieParentala, Stare_de_sanatate stareDeSanatate);
 
     ~Elev_special();
+
+    std::shared_ptr<Elev> clone() const override;
 
     void afis(std::ostream &os) const override;
 };

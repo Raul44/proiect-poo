@@ -5,12 +5,14 @@
 #include "Elev_special.h"
 
 Elev_special::Elev_special(const int &varsta, const std::string &nume, const std::string &prenume,
-                           const std::string &cnp, const Bursa &bursa, float medie,
+                           const std::string &cnp, float medie,
                            const std::string &locatieLocuinta, Situatie_parentala situatieParentala,
-                           Stare_de_sanatate stareDeSanatate) : Elev(varsta, nume, prenume, cnp, bursa, medie,
+                           Stare_de_sanatate stareDeSanatate) : Elev(varsta, nume, prenume, cnp, medie,
                                                                      locatieLocuinta),
                                                                 situatie_parentala(situatieParentala),
-                                                                stare_de_sanatate(stareDeSanatate) {}
+                                                                stare_de_sanatate(stareDeSanatate) {
+    if(situatie_parentala!=Situatie_parentala::ambii_parinti || stare_de_sanatate!=Stare_de_sanatate::sanatos){bursa =factory_bursa::sociala();}
+}
 
 Elev_special::~Elev_special() {
 
@@ -32,4 +34,8 @@ void Elev_special::afis(std::ostream &os) const {
     }
     os << " stare_de_sanatate: ";
     os<<(stare_de_sanatate ==Stare_de_sanatate::nesanatos ? "nesanatos" : "sanatos");
+}
+
+std::shared_ptr<Elev> Elev_special::clone() const {
+    return std::make_shared<Elev_special>(*this);
 }

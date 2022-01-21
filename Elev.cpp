@@ -7,11 +7,16 @@
 Elev::Elev() {};
 
 Elev::Elev(const int &varsta, const std::string &nume, const std::string &prenume, const std::string &cnp,
-           const Bursa &bursa, float medie, const std::string &locatieLocuinta) : Persoana(varsta, nume, prenume,
+           float medie, const std::string &locatieLocuinta) : Persoana(varsta, nume, prenume,
                                                                                                  cnp, Ocupatie::elev),
-                                                                                        bursa(bursa), medie(medie),
+                                                                                         medie(medie),
                                                                                         locatie_locuinta(
-                                                                                                locatieLocuinta){}
+                                                                                                locatieLocuinta){
+    if(medie==10){ bursa = factory_bursa::performanta();}
+    else if(medie>9){ bursa = factory_bursa::merit();}
+         else if(medie>8){ bursa = factory_bursa::studiu();}
+                else if(locatieLocuinta!="Bucuresti"){bursa = factory_bursa::transport();}
+}
 Elev::~Elev() {
 
 }
@@ -47,8 +52,12 @@ void Elev::afis(std::ostream &os) const {
     Persoana::afis(os);
     os << " medie: " << medie << " locatie_locuinta: " << locatie_locuinta<< " Bursa: " << bursa;
 }
-void Elev::prezinta_ocupatia() {
+void Elev::prezinta_ocupatia(std::ostream &os) const {
 
+}
+
+std::shared_ptr<Elev> Elev::clone() const {
+    return std::make_shared<Elev>(*this);
 }
 
 

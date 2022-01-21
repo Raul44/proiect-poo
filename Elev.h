@@ -7,6 +7,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <memory>
 #include "Bursa.h"
 #include "Persoana.h"
 
@@ -19,7 +20,7 @@ public:
     Elev();
 
     Elev(const int &varsta, const std::string &nume, const std::string &prenume, const std::string &cnp
-         , const Bursa &bursa, float medie, const std::string &locatieLocuinta);
+         , float medie, const std::string &locatieLocuinta);
 
     ~Elev();
 
@@ -33,7 +34,9 @@ public:
 
     void afis(std::ostream &os) const override;
 
-    void prezinta_ocupatia() override;
+    virtual std::shared_ptr<Elev> clone() const;
+
+    void prezinta_ocupatia(std::ostream &os) const override;
 };
 
 

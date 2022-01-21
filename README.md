@@ -43,7 +43,7 @@
 - [X] moșteniri
   - [X] funcții virtuale (pure)
   - [X] apelarea constructorului din clasa de bază 
-  - [ ] smart pointers / pointeri normali și verificat să nu fie memory leaks
+  - [X] smart pointers / pointeri normali și verificat să nu fie memory leaks
 - [ ] excepții
   - [ ] predefinite
   - [ ] ierarhie proprie (cu baza `std::exception` sau derivată din `std::exception`)
@@ -62,7 +62,7 @@
 - săptămâna 12 (22-29 decembrie): (eventuale) modificări în urma feedback-ului
 
 #### Cerințe
-- [ ] 2 design patterns
+- [X] 2 design patterns
 - [ ] funcții și clase șablon (`template`)
 - [ ] un ultim (?) tag de `git`: de exemplu `v0.3` sau `v1.0`
 

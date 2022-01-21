@@ -6,19 +6,29 @@
 #define PROIECT_POO_LICEU_H
 
 #include <array>
+#include <ostream>
 #include "Profesor.h"
 #include "Clasa.h"
 
 class Liceu {
-std::vector<Profesor> profesori;
-std::array<Clasa, 16> clasa;
+    static Liceu *liceu;
+
+    std::vector<std::shared_ptr<Profesor>> profesori;
+    std::vector<Clasa> clase;
+
+private:
+    Liceu() = default;
+
 public:
-    Liceu(const std::vector<Profesor> &profesori, const std::array<Clasa, 16> &clasa);
 
     ~Liceu();
-    Liceu() = default;
-    void adaugare_prof(const Profesor &prof);
-    void adaugare_profi(const std::vector<Profesor> &profi);
+
+    static Liceu *get_liceu();
+
+    void adaugare_prof(const std::shared_ptr<Profesor> &prof);
+    void adaugare_profi(const std::vector<std::shared_ptr<Profesor>> &profi);
+    void adaugare_clasa(const Clasa &clasa);
+    friend std::ostream &operator<<(std::ostream &os, const Liceu &liceu);
 };
 
 

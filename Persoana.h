@@ -25,8 +25,8 @@ public:
              Ocupatie ocupatie);
 
     virtual ~Persoana() = default;
-    virtual void prezinta_ocupatia() = 0;
-    std::string get_gen(){
+    virtual void prezinta_ocupatia(std::ostream &os) const = 0;
+    std::string get_gen() const {
         if(cnp[0] == '1' or cnp[0] == '5')
             return "masculin";
         else

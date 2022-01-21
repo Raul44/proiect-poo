@@ -6,6 +6,7 @@
 #define PROIECT_POO_PROFESOR_H
 #include <iostream>
 #include <vector>
+#include <memory>
 #include "Persoana.h"
 
 class Profesor:public Persoana{
@@ -17,9 +18,13 @@ public:
 
     Profesor(const int &varsta, const std::string &nume, const std::string &prenume, const std::string &cnp,
              Ocupatie ocupatie, bool diriginte, const std::string &materie, int vechime);
-    void prezinta_ocupatia() override;
-    int calculeaza_salariu();
+    void prezinta_ocupatia(std::ostream &os) const override;
+    int calculeaza_salariu() const;
+    virtual std::shared_ptr<Profesor> clone() const;
 
+    void afis(std::ostream &os) const override;
+
+    friend std::ostream &operator<<(std::ostream &os, const Profesor &profesor);
 };
 
 
