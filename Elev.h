@@ -18,16 +18,16 @@ protected:
 public:
     Elev();
 
-    Elev(const int &varsta, const std::string &nume, const std::string &prenume, const std::string &cnp,
-         Ocupatie ocupatie, const Bursa &bursa, float medie, const std::string &locatieLocuinta);
+    Elev(const int &varsta, const std::string &nume, const std::string &prenume, const std::string &cnp
+         , const Bursa &bursa, float medie, const std::string &locatieLocuinta);
 
     ~Elev();
 
     void adauga(Bursa const &Bursa);
 
-    Elev(const Elev &copie);//constructor de copiere
+    Elev(const Elev &copie);
 
-    Elev &operator=(const Elev &copie);//operatorul =
+    Elev &operator=(const Elev &copie);
 
     friend std::ostream &operator<<(std::ostream &os, const Elev &elev);
 

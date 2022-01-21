@@ -14,22 +14,22 @@
 - săptămâna 5 (6 noiembrie): (eventuale) modificări în urma feedback-ului
 
 #### Cerințe
-- [X ] definirea a minim 3 clase
-  - [X ] <clasa 1>
-  - [X ] <clasa 2>
-  - [X ] <clasa 3>
-- [X ] constructori de inițializare
-- [X ] constructor de copiere sau cc (pt minim o clasă)
-- [X ] `operator=` sau op= (pt minim o clasă, aceeași unde s-a făcut cc și destructor)
-- [X ] destructor (pt minim o clasă, aceeași unde s-a făcut cc și op=)
-- [X ] `operator<<` pt toate clasele
-- [X ] cât mai multe `const`
-- [X ] implementarea a minim 2 funcții publice pentru funcționalități specifice temei alese (nu se iau în considerare citiri/afișări/getteri/setteri)
-  - [X ] <prima funcționalitate>
-  - [X ] <a doua funcționalitate>
-- [X ] scenariu de utilizare a claselor definite: apelarea din `main` a tuturor funcțiilor _publice_ definite (nu generați constructori/getteri/setteri dacă nu aveți nevoie de ei); apelarea se va face direct sau indirect - adică din `main` se pot apela funcții care construiesc obiecte cu clasele definite și folosesc aceste obiecte
-- [X ] după ce e gata prima temă, tag de `git`: de exemplu `v0.1`
-- [X ] GitHub Actions sau alt serviciu de CI (Continuous Integration) - exemplu [aici](https://github.com/mcmarius/demo-poo/blob/master/.github/workflows/cmake.yml) (a se vedea și `CMakeLists.txt` din același repo pt compiler flags)
+- [X] definirea a minim 3 clase
+  - [X] <clasa 1>
+  - [X] <clasa 2>
+  - [X] <clasa 3>
+- [X] constructori de inițializare
+- [X] constructor de copiere sau cc (pt minim o clasă)
+- [X] `operator=` sau op= (pt minim o clasă, aceeași unde s-a făcut cc și destructor)
+- [X] destructor (pt minim o clasă, aceeași unde s-a făcut cc și op=)
+- [X] `operator<<` pt toate clasele
+- [X] cât mai multe `const`
+- [X] implementarea a minim 2 funcții publice pentru funcționalități specifice temei alese (nu se iau în considerare citiri/afișări/getteri/setteri)
+  - [X] <prima funcționalitate>
+  - [X] <a doua funcționalitate>
+- [X] scenariu de utilizare a claselor definite: apelarea din `main` a tuturor funcțiilor _publice_ definite (nu generați constructori/getteri/setteri dacă nu aveți nevoie de ei); apelarea se va face direct sau indirect - adică din `main` se pot apela funcții care construiesc obiecte cu clasele definite și folosesc aceste obiecte
+- [ ] după ce e gata prima temă, tag de `git`: de exemplu `v0.1`
+- [ ] GitHub Actions sau alt serviciu de CI (Continuous Integration) - exemplu [aici](https://github.com/mcmarius/demo-poo/blob/master/.github/workflows/cmake.yml) (a se vedea și `CMakeLists.txt` din același repo pt compiler flags)
 
 ## Tema 2
 
@@ -39,19 +39,19 @@
 - săptămâna 9 (4 decembrie): (eventuale) modificări în urma feedback-ului
 
 #### Cerințe
-- [X ] separarea codului din clase în `.h` (sau `.hpp`) și `.cpp`
-- [X ] moșteniri
-  - [X ] funcții virtuale (pure)
-  - [X ] apelarea constructorului din clasa de bază 
+- [X] separarea codului din clase în `.h` (sau `.hpp`) și `.cpp`
+- [X] moșteniri
+  - [X] funcții virtuale (pure)
+  - [X] apelarea constructorului din clasa de bază 
   - [ ] smart pointers / pointeri normali și verificat să nu fie memory leaks
 - [ ] excepții
   - [ ] predefinite
   - [ ] ierarhie proprie (cu baza `std::exception` sau derivată din `std::exception`)
   - [ ] utilizare cu sens: de exemplu, `throw` în constructor, `try`/`catch` în `main`
-- [ ] funcții și atribute `static`
-- [X ] STL
-- [X ] cât mai multe `const`
-- [X ] la fel ca mai sus, apelarea tuturor funcțiilor publice din `main`
+- [X] funcții și atribute `static`
+- [X] STL
+- [X] cât mai multe `const`
+- [X] la fel ca mai sus, apelarea tuturor funcțiilor publice din `main`
 - [ ] încă un tag de `git`: de exemplu `v0.2`
 
 ## Tema 3
