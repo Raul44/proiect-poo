@@ -18,7 +18,7 @@ void Profesor::prezinta_ocupatia(std::ostream &os) const {
             os<<"Profesorul ";
         else
         os<<"Profesoara ";
-    os<<this->nume<<" "<<this->prenume<<" preda "<<this->materie<<" si este de o vechime de "<<this->vechime<<" ani, are un salariu de "<<this->calculeaza_salariu()<<" de lei.";
+    os<<this->nume<<" "<<this->prenume<<" preda "<<this->materie<<" si are o vechime de "<<this->vechime<<" ani, are un salariu de "<<this->calculeaza_salariu()<<" de lei.";
 }
 
 int Profesor::calculeaza_salariu() const {

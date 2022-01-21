@@ -11,7 +11,9 @@ Elev_special::Elev_special(const int &varsta, const std::string &nume, const std
                                                                      locatieLocuinta),
                                                                 situatie_parentala(situatieParentala),
                                                                 stare_de_sanatate(stareDeSanatate) {
-    if(situatie_parentala!=Situatie_parentala::ambii_parinti || stare_de_sanatate!=Stare_de_sanatate::sanatos){bursa =factory_bursa::sociala();}
+
+    if (situatie_parentala != Situatie_parentala::ambii_parinti ||
+        stare_de_sanatate != Stare_de_sanatate::sanatos) { bursa += factory_bursa::sociala(); }
 }
 
 Elev_special::~Elev_special() {
@@ -21,7 +23,7 @@ Elev_special::~Elev_special() {
 void Elev_special::afis(std::ostream &os) const {
     Elev::afis(os);
     os << " situatie_parentala: ";
-    switch (situatie_parentala){
+    switch (situatie_parentala) {
         case Situatie_parentala::orfan:
             os << " orfan ";
             break;
@@ -33,7 +35,7 @@ void Elev_special::afis(std::ostream &os) const {
             break;
     }
     os << " stare_de_sanatate: ";
-    os<<(stare_de_sanatate ==Stare_de_sanatate::nesanatos ? "nesanatos" : "sanatos");
+    os << (stare_de_sanatate == Stare_de_sanatate::nesanatos ? "nesanatos" : "sanatos");
 }
 
 std::shared_ptr<Elev> Elev_special::clone() const {

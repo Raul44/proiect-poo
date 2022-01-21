@@ -11,6 +11,14 @@
 #include "Bursa.h"
 #include "Persoana.h"
 
+class an_invalid : public std::runtime_error{
+public:
+    an_invalid(const std::string &arg = "Varsta prea mare");
+};
+
+an_invalid::an_invalid(const std::string &arg) : runtime_error(arg) {}
+
+
 class Elev:public Persoana{
 protected:
     Bursa bursa;
@@ -38,7 +46,6 @@ public:
 
     void prezinta_ocupatia(std::ostream &os) const override;
 };
-
 
 
 #endif //PROIECT_POO_ELEV_H
