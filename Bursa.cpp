@@ -5,29 +5,27 @@
 #include "Bursa.h"
 
 
-
-Bursa::Bursa() : pret(0), nr_luni(0), denumire("Fara bursa"){
+template<typename T>
+Bursa<T>::Bursa() : pret(0), nr_luni(0), denumire("Fara bursa"){
 
 }
+template<typename T>
+Bursa<T>::Bursa(T pret, T nrLuni, const std::string &denumire) : pret(pret), nr_luni(nrLuni), denumire(denumire) {}
 
-Bursa::Bursa(int pret, int nrLuni, const std::string &denumire) : pret(pret), nr_luni(nrLuni), denumire(denumire) {}
-
-Bursa::~Bursa(){
+template<typename T>
+Bursa<T>::~Bursa(){
 }
 
-std::ostream &operator<<(std::ostream &os, const Bursa &bursa) {
-    os << "pret: " << bursa.pret << " nr_luni: " << bursa.nr_luni << " denumire: " << bursa.denumire << ' ';
-    return os;
-}
-
-Bursa &Bursa::operator=(const Bursa &copie){
+template<typename T>
+Bursa<T> &Bursa<T>::operator=(const Bursa &copie){
     pret = copie.pret;
     nr_luni = copie.nr_luni;
     denumire = copie.denumire;
     return *this;
 }
 
-Bursa &Bursa::operator+=(const Bursa bursa) {
+template<typename T>
+Bursa<T> &Bursa<T>::operator+=(const Bursa bursa) {
     this->pret += bursa.pret;
     this->nr_luni = (bursa.nr_luni > this->nr_luni ? bursa.nr_luni : this->nr_luni);
     this->denumire = (this->denumire == "Fara bursa" ? bursa.denumire :
@@ -35,3 +33,8 @@ Bursa &Bursa::operator+=(const Bursa bursa) {
 
     return *this;
 }
+
+template class Bursa<int>;
+template class Bursa<float>;
+template class factory_bursa<int>;
+template class factory_bursa<float>;

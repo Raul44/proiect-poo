@@ -11,17 +11,17 @@
 #include "Bursa.h"
 #include "Persoana.h"
 
-class an_invalid : public std::runtime_error{
+class varsta_mare : public std::runtime_error{
 public:
-    an_invalid(const std::string &arg = "Varsta prea mare");
+    varsta_mare(const std::string &arg = "Varsta prea mare"): runtime_error(arg){}
 };
 
-an_invalid::an_invalid(const std::string &arg) : runtime_error(arg) {}
+
 
 
 class Elev:public Persoana{
 protected:
-    Bursa bursa;
+    Bursa<int> bursa;
     float medie;
     std::string locatie_locuinta;
 public:
@@ -32,7 +32,7 @@ public:
 
     ~Elev();
 
-    void adauga(Bursa const &Bursa);
+    void adauga(Bursa<int> const &Bursa);
 
     Elev(const Elev &copie);
 

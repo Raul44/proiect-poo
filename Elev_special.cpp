@@ -13,7 +13,7 @@ Elev_special::Elev_special(const int &varsta, const std::string &nume, const std
                                                                 stare_de_sanatate(stareDeSanatate) {
 
     if (situatie_parentala != Situatie_parentala::ambii_parinti ||
-        stare_de_sanatate != Stare_de_sanatate::sanatos) { bursa += factory_bursa::sociala(); }
+        stare_de_sanatate != Stare_de_sanatate::sanatos) { bursa += factory_bursa<int>::sociala(); }
 }
 
 Elev_special::~Elev_special() {

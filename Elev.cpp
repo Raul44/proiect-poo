@@ -12,13 +12,13 @@ Elev::Elev(const int &varsta, const std::string &nume, const std::string &prenum
                                                               medie(medie),
                                                               locatie_locuinta(locatieLocuinta){
 const int an =varsta;
-    if(an > 20){throw an_invalid();}
+    if(an > 20){throw varsta_mare();}
     else{
-    if (medie == 10) { bursa = factory_bursa::performanta(); }
-    else if (medie > 9) { bursa = factory_bursa::merit(); }
-    else if (medie > 8) { bursa = factory_bursa::studiu(); }
+    if (medie == 10) { bursa = factory_bursa<int>::performanta(); }
+    else if (medie > 9) { bursa = factory_bursa<int>::merit(); }
+    else if (medie > 8) { bursa = factory_bursa<int>::studiu(); }
 
-    if (locatieLocuinta != "Bucuresti") { bursa += factory_bursa::transport(); }}
+    if (locatieLocuinta != "Bucuresti") { bursa += factory_bursa<int>::transport(); }}
 }
 
 Elev::~Elev() {

@@ -2,12 +2,11 @@
 #include "Elev_special.h"
 #include "Liceu.h"
 
-
 int main()
 {
     auto x = Liceu::get_liceu();
 
-    Bursa merit = factory_bursa::merit();
+    Bursa<int> merit = factory_bursa<int>::merit();
     try{
     Elev e6 (25, "Eremia", "Vasilica", "292395428349", 7,"Bucuresti");
     }catch (std::exception& e){
